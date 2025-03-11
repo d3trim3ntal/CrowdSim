@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class AIControl : MonoBehaviour {
+public class AIControl : MonoBehaviour 
+{
 
     GameObject[] goalLocations;
     UnityEngine.AI.NavMeshAgent agent;
@@ -8,7 +9,8 @@ public class AIControl : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start() {
+    void Start() 
+    {
         goalLocations = GameObject.FindGameObjectsWithTag("goal");
         agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
@@ -21,9 +23,11 @@ public class AIControl : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() 
+    {
 
-        if (agent.remainingDistance < 1) {
+        if (agent.remainingDistance < 1) 
+        {
 
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         }
